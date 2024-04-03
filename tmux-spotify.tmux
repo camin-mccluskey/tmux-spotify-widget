@@ -23,7 +23,7 @@ main() {
 	local key
 
 	for key in $key_bindings; do
-    tmux bind-key -T popup "$key" run -b "source $CURRENT_DIR/scripts/spotify.sh && show_menu"
+    tmux bind-key -T prefix S run -b "source $CURRENT_DIR/scripts/spotify.sh && show_menu"
   done
 }
 

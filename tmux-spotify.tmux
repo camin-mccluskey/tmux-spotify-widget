@@ -4,7 +4,7 @@ CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PATH="/usr/local/bin:$PATH:/usr/sbin"
 
 main() {
-default_binding_key="S-s"  # Shift + S default to show the menu
+default_binding_key="S"  # Shift + S default to show the menu
 binding_option="@spotifybinding"
 
 get_tmux_option() {
@@ -23,7 +23,7 @@ main() {
 	local key
 
 	for key in $key_bindings; do
-    tmux bind-key -T prefix S run -b "source $CURRENT_DIR/scripts/spotify.sh && show_menu"
+    tmux bind-key -T prefix "${key}" run -b "source ${CURRENT_DIR}/scripts/spotify.sh && show_menu"
   done
 }
 

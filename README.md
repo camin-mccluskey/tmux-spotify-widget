@@ -1,4 +1,5 @@
-# Spotify plugin for tmux
+# Spotify plugin for tmux (forked)
+
 [![GitHub](https://img.shields.io/github/license/xamut/tmux-spotify)](https://opensource.org/licenses/MIT)
 
 Show a nice menu to manage Spotify application.
@@ -7,34 +8,44 @@ Show a nice menu to manage Spotify application.
   <img src="https://github.com/xamut/tmux-spotify/raw/master/assets/tmux-spotify.gif" alt="tmux-spotify"  width=600 height=242>
 </p>
 
+Fork of [tmux-spotify](https://github.com/xamut/tmux-spotify). Renamed to avoid conflict with another spotify tmux plgin on TPM and to override the default keybinding of `prefix + s`, which should be reserved for opening the session management window in tmux.
+
 ## Installation
+
 ### Requirements
-* macOS
-* tmux >= 3.0
+
+- macOS
+- tmux >= 3.0
 
 ### With Tmux Plugin Manager
+
 Add the plugin in `.tmux.conf`:
+
 ```
 set -g @plugin 'xamut/tmux-spotify'
 ```
+
 Press `prefix + I` to fetch the plugin and source it. Done.
 
 ### Manual
+
 Clone the repo somewhere. Add `run-shell` in the end of `.tmux.conf`:
 
 ```
 run-shell PATH_TO_REPO/tmux-spotify.tmux
 ```
+
 NOTE: this line should be placed after `set-option -g status-right ...`.
 
 Press `prefix + :` and type `source-file ~/.tmux.conf`. Done.
 
 ## Usage
+
 Press tmux `prefix + s` (for example, `C-a s`) and you will see a nice menu:
 
 ![tmux-spotify](./assets/spotify-menu.png)
 
-```
+```text
 * Copy URL        (c) - copy Spotify URL of the current track to the clipboard
 * Open Spotify    (o) - open/launch Spotify
 * Play/Pause      (p) - toggle play/pause
@@ -45,9 +56,21 @@ Press tmux `prefix + s` (for example, `C-a s`) and you will see a nice menu:
 * Close menu      (q) - close menu
 ```
 
+## Configuring the binding
+
+The binding may be configured via your `.tmux.conf` as:
+
+```bash
+set -g @spotifybinding 'S'
+```
+
+```markdown
 ## Other plugins
-* [tmux-network-bandwidth](https://github.com/xamut/tmux-network-bandwidth)
-* [tmux-weather](https://github.com/xamut/tmux-weather)
+
+- [tmux-network-bandwidth](https://github.com/xamut/tmux-network-bandwidth)
+- [tmux-weather](https://github.com/xamut/tmux-weather)
 
 ## License
+
 tmux-spotify plugin is released under the [MIT License](https://opensource.org/licenses/MIT).
+```

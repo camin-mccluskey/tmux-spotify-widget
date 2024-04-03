@@ -2,7 +2,7 @@
 
 [![GitHub](https://img.shields.io/github/license/xamut/tmux-spotify)](https://opensource.org/licenses/MIT)
 
-Show a nice menu to manage Spotify application.
+Show a nice menu to manage the Spotify application.
 
 <p align="center">
   <img src="https://github.com/xamut/tmux-spotify/raw/master/assets/tmux-spotify.gif" alt="tmux-spotify"  width=600 height=242>
@@ -21,8 +21,8 @@ Fork of [tmux-spotify](https://github.com/xamut/tmux-spotify). Renamed to avoid 
 
 Add the plugin in `.tmux.conf`:
 
-```
-set -g @plugin 'xamut/tmux-spotify'
+```bash
+set -g @plugin 'camin-mccluskey/tmux-spotify-widget'
 ```
 
 Press `prefix + I` to fetch the plugin and source it. Done.
@@ -31,7 +31,7 @@ Press `prefix + I` to fetch the plugin and source it. Done.
 
 Clone the repo somewhere. Add `run-shell` in the end of `.tmux.conf`:
 
-```
+```bash
 run-shell PATH_TO_REPO/tmux-spotify.tmux
 ```
 
@@ -41,7 +41,7 @@ Press `prefix + :` and type `source-file ~/.tmux.conf`. Done.
 
 ## Usage
 
-Press tmux `prefix + s` (for example, `C-a s`) and you will see a nice menu:
+Press tmux `prefix + S` (for example, `C-b S`) and you will see a nice menu:
 
 ![tmux-spotify](./assets/spotify-menu.png)
 
@@ -61,10 +61,9 @@ Press tmux `prefix + s` (for example, `C-a s`) and you will see a nice menu:
 The binding may be configured via your `.tmux.conf` as:
 
 ```bash
-set -g @spotifybinding 'S'
+set -g @spotifybinding 'X'
 ```
 
-```markdown
 ## Other plugins
 
 - [tmux-network-bandwidth](https://github.com/xamut/tmux-network-bandwidth)
@@ -73,4 +72,3 @@ set -g @spotifybinding 'S'
 ## License
 
 tmux-spotify plugin is released under the [MIT License](https://opensource.org/licenses/MIT).
-```
